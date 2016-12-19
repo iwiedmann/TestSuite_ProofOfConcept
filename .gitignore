@@ -8,3 +8,9 @@ venv/
 
 # Pycharm
 .idea/
+
+# pytest
+.cache/
+
+# selenium
+geckodriver.log
