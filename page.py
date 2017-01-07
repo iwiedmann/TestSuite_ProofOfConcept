@@ -5,7 +5,7 @@ Base module for web page classes using the page object model.
 import pytest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.common import exceptions
 
 from globals import MAX_WAIT_TIME, BASE_URL
 
@@ -33,5 +33,16 @@ class Page(object):
             wait = WebDriverWait(self.selenium, MAX_WAIT_TIME)
             try:
                 wait.until(EC.title_contains(self._page_title))
-            except TimeoutException:
+            except exceptions.TimeoutException:
                 pytest.fail("Webpage title '{title}' was not found".format(title=self._page_title))
+
+    def is_element_visible(self, *locator):
+        """
+        Check that an element is visible on the page.
+        :param locator: tuple for the element locator in the format (locator_type, locator_value)
+        :return: boolean of whether the element is visible
+        """
+        try:
+            return self.selenium.find_element(*locator).is_displayed()
+        except (exceptions.NoSuchElementException, exceptions.ElementNotVisibleException):
+            return False
