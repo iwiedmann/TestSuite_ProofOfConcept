@@ -1,5 +1,5 @@
 """
-Base class for webpage classes using the page object model.
+Base module for web page classes using the page object model.
 """
 
 import pytest
@@ -12,7 +12,7 @@ from globals import MAX_WAIT_TIME, BASE_URL
 
 class Page(object):
     """
-    Base class for all webpages.
+    Base class for all pages.
     """
 
     def __init__(self, selenium):
@@ -26,7 +26,7 @@ class Page(object):
 
     def check_page_title(self):
         """
-        Check the webpage title if a child class webpage title is defined.
+        Check the page title if a child class webpage title is defined.
         """
         if self._page_title:
             # implicit waits don't work for page titles so use an explicit wait

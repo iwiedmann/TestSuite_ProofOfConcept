@@ -1,5 +1,5 @@
 """
-Webpage file for the Sunverge home page.
+Web page module for the Sunverge home page.
 """
 
 from TestSuite_ProofOfConcept.page import Page
@@ -7,7 +7,7 @@ from TestSuite_ProofOfConcept.page import Page
 
 class HomePage(Page):
     """
-    Webpage class for the Sunverge home page.
+    Page class for the Sunverge home page.
     """
 
     _page_title = 'Sunverge Energy | Home'
