@@ -1,5 +1,5 @@
 """
-Test for the Sunverge "ABOUT US" page.
+Tests for the Sunverge "ABOUT US" page.
 """
 
 import pytest
@@ -12,7 +12,8 @@ from TestSuite_ProofOfConcept.pages.about_us_page import AboutUsPage
 @pytest.fixture
 def setup_about_us_page(selenium):
     """
-    Setup fixture to directly navigate to the "ABOUT US" page.
+    Setup fixture to directly navigate to the "ABOUT US" page and check that it loaded correctly.
+    :param selenium: pytest-selenium fixture
     :return: about_us_pg: object for the "ABOUT US" page
     """
     about_us_pg = AboutUsPage(selenium)
