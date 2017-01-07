@@ -12,14 +12,14 @@ class HomePage(Page):
     Page class for the Sunverge home page.
     """
 
-    _page_title = "Sunverge Energy | Home"
+    _page_title = 'Sunverge Energy | Home'
 
     # locator building blocks
-    _row_header_xpath = "/html/body/div[1]/div/div[2]"
+    _row_header_xpath = '/html/body/div[1]/div/div[2]'
 
     # locators
-    _sunverge_logo_locator = (By.XPATH, _row_header_xpath + "/div/a/img")
-    _about_us_link_locator = (By.XPATH, _row_header_xpath + "/nav[1]/ul/li[3]/a")
+    _sunverge_logo_locator = (By.XPATH, _row_header_xpath + '/div/a/img')
+    _about_us_link_locator = (By.XPATH, _row_header_xpath + '/nav[1]/ul/li[3]/a')
 
     def go_to_home_page(self):
         """

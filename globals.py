@@ -7,4 +7,4 @@ Global constants used by the test suite.
 MAX_WAIT_TIME = 10
 
 # Sunverge corporate website base url
-BASE_URL = "http://www.sunverge.com/"
+BASE_URL = 'http://www.sunverge.com/'
