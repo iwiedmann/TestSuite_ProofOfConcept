@@ -23,9 +23,9 @@ class AboutUsPage(Page):
     # groups of locators
     _all_sections_locators = {
         "vision_section_locator": (By.ID, 'top-section'),
-        "management_section_locator": (By.ID, 'xecutive-team'),
+        "management_section_locator": (By.ID, 'executive-team'),
         "directors_section_locator": (By.ID, 'boardsec'),
-        "investors_section_locator": (By.ID, 'nvestors')
+        "investors_section_locator": (By.ID, 'investors')
     }
 
     def go_to_about_us_page(self):
