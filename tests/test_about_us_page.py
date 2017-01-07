@@ -1,8 +1,9 @@
 """
-Tests for the Sunverge "ABOUT US" page.
+Tests for the Sunverge about us page.
 """
 
 import pytest
+import testfixtures
 
 from TestSuite_ProofOfConcept.pages.about_us_page import AboutUsPage
 
@@ -12,9 +13,9 @@ from TestSuite_ProofOfConcept.pages.about_us_page import AboutUsPage
 @pytest.fixture
 def setup_about_us_page(selenium):
     """
-    Setup fixture to directly navigate to the "ABOUT US" page and check that it loaded correctly.
+    Setup fixture to directly navigate to the about us page and check that it loaded correctly.
     :param selenium: pytest-selenium fixture
-    :return: about_us_pg: object for the "ABOUT US" page
+    :return: about_us_pg: object for the about us page
     """
     about_us_pg = AboutUsPage(selenium)
     about_us_pg.go_to_about_us_page()
@@ -31,7 +32,9 @@ def test_sub_menu_navigation_bar(setup_about_us_page):
     this test could be fragile.
     """
     about_us_pg = setup_about_us_page
+    expected_visibility_results = about_us_pg.expect_all_sections_visible
     visibility_results = about_us_pg.are_all_sections_visible()
-    for locator_name, is_visible in visibility_results.iteritems():
-        assert is_visible, "{locator} is not visible".format(locator=locator_name)
+    testfixtures.compare(
+        expected_visibility_results, visibility_results, prefix="The following about us page sections are not visible"
+    )
     #TODO: finish this test
