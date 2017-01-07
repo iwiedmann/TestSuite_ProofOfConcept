@@ -24,12 +24,14 @@ def setup_about_us_page(selenium):
 
 # tests
 
-def test_sub_menu_navigation_bar(setup_about_us_page):
+@pytest.mark.parametrize("sub_menu_link_locator", AboutUsPage.get_sub_menu_link_locator_names())
+def test_sub_menu_navigation_bar(setup_about_us_page, sub_menu_link_locator):
     """
     Parameterized test to test all the links in the green sub menu navigation bar.  Each link is clicked and then it is
     checked that all the sections are still visible.
     TODO: A better test might check that the page scrolled to the correct section after clicking each link; however,
     this test could be fragile.
+    :param sub_menu_link_locator: each sub menu link locator to run a test for
     """
     about_us_pg = setup_about_us_page
     expected_visibility_results = about_us_pg.expect_all_sections_visible
