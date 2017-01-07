@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from TestSuite_ProofOfConcept.page import Page
 from about_us_page import AboutUsPage
 
+
 class HomePage(Page):
     """
     Page class for the Sunverge home page.
@@ -31,9 +32,14 @@ class HomePage(Page):
     def go_to_about_us_page(self):
         """
         Navigate to the about us page through the "ABOUT US" link.
+        :return: object for the "ABOUT US" page
         """
         self.selenium.find_element(*self._about_us_link_locator).click()
         return AboutUsPage(self.selenium)
 
     def is_sunverge_logo_visible(self):
+        """
+        Check if the Sunverge logo is visible.
+        :return: boolean of whether the element is visible
+        """
         return self.is_element_visible(*self._sunverge_logo_locator)

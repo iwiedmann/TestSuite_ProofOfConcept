@@ -11,7 +11,7 @@ def test_sunverge_logo(selenium):
     """
     home_pg = HomePage(selenium)
     home_pg.go_to_home_page()
-    assert home_pg.is_sunverge_logo_visible()
+    assert home_pg.is_sunverge_logo_visible(), "Sunverge logo is not visible."
 
 
 def test_navigate_to_about_us_page(selenium):
