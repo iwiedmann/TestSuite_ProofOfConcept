@@ -32,7 +32,7 @@ class Page(object):
             # implicit waits don't work for page titles so use an explicit wait
             wait = WebDriverWait(self.selenium, MAX_WAIT_TIME)
             try:
-                wait.until(EC.title_contains(self._page_title))
+                wait.until(EC.title_is(self._page_title))
             except exceptions.TimeoutException:
                 pytest.fail("Webpage title '{title}' was not found".format(title=self._page_title))
 

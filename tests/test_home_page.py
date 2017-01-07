@@ -20,4 +20,5 @@ def test_navigate_to_about_us_page(selenium):
     """
     home_pg = HomePage(selenium)
     home_pg.go_to_home_page()
-    # TODO: finish this test
+    about_us_pg = home_pg.go_to_about_us_page()
+    about_us_pg.check_page_title()
