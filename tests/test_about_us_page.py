@@ -8,6 +8,9 @@ import testfixtures
 from TestSuite_ProofOfConcept.pages.about_us_page import AboutUsPage
 
 
+pytestmark = pytest.mark.about_us_page_tests
+
+
 # fixtures
 
 @pytest.fixture

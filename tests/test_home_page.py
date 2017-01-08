@@ -7,6 +7,9 @@ import pytest
 from TestSuite_ProofOfConcept.pages.home_page import HomePage
 
 
+pytestmark = pytest.mark.home_page_tests
+
+
 # fixtures
 
 @pytest.fixture
