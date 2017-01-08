@@ -46,3 +46,9 @@ class Page(object):
             return self.selenium.find_element(*locator).is_displayed()
         except (exceptions.NoSuchElementException, exceptions.ElementNotVisibleException):
             return False
+
+    def scroll_to_bottom(self):
+        """
+        Scroll to the bottom of the page.
+        """
+        self.selenium.execute_script("window.scrollTo(0, document.body.scrollHeight)")

@@ -37,8 +37,7 @@ class AboutUsPage(Page):
 
     def go_to_about_us_page(self):
         """
-        Navigate to the about us page
-         directly.
+        Navigate to the about us page directly.
         """
         self.selenium.get(self._about_us_url)
         self.check_page_title()
@@ -52,6 +51,17 @@ class AboutUsPage(Page):
         """
         return cls._sub_menu_locators.keys()
 
+    def click_sub_menu_link_locator(self, locator_name):
+        """
+        Click the given sub menu locator.
+        :param locator_name: one of the keys in self._sub_menu_locators
+        """
+        locator = self._sub_menu_locators[locator_name]
+        ###############debug
+        print "current locator = {locator}".format(locator=locator)
+        ####################end
+        self.selenium.find_element(*locator).click()
+
     @property
     def expect_all_sections_visible(self):
         """
@@ -63,9 +73,9 @@ class AboutUsPage(Page):
             expected_visibility_results[locator_name] = "is visible"
         return expected_visibility_results
 
-    def are_all_sections_visible(self):
+    def check_all_sections_visibility(self):
         """
-        Checks that all the sections on the page are visible or not.
+        Checks the visibility of each section on the page.
         :return: visibility_results: a dictionary with showing which locators were visible
         """
         visibility_results = deepcopy(self._sections_locators)
