@@ -1,4 +1,4 @@
-# Test_Suite-Proof_Of_Concept
+# TestSuite_ProofOfConcept
 Test suite to showcase basic selenium and pytest concepts.
 
 ##### Note:
