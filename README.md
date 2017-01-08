@@ -7,58 +7,72 @@ Firefox.  It should work on other operating systems, but this has not been
 tested.
 
 ## Requirements
-* Install and setup the latest versions of the following if you haven't
-already.
-    * [Python 2.x with pip and setuptools](https://www.python.org/downloads/)
-    * [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-    * [Git](https://help.github.com/articles/set-up-git/)
-* Upgrade `pip` and `setuptools` to the latest version:
+Test suite installation requirements.
+
+### The basics
+Install and setup the latest versions of the following if you haven't
+already:
+* [Python 2.x with pip and setuptools](https://www.python.org/downloads/)
+* [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+* [Git](https://git-scm.com/downloads)
+
+### Upgrade pip and setuptools
 ```bash
 $ pip install --upgrade pip setuptools
 ```
-* Install the [virtualenv](https://virtualenv.pypa.io/en/stable/) package if
+
+### Python virtualenv package
+Install the [virtualenv](https://virtualenv.pypa.io/en/stable/) package if
 you haven't already:
 ```bash
-$ pip install virtualenv
+$ sudo pip install virtualenv
 ```
-* Install GeckoDriver in order for Selenium to work with the latest version of
-Firefox.
-    * [Download GeckoDriver](https://github.com/mozilla/geckodriver/releases)
-    * Unzip the downloaded file:
-    ```bash
-    $ tar -xvzf geckodriver<version>.tar.gz
-    ```
-    * Move `geckodriver` to the `/opt` directory:
-    ```bash
-    $ sudo mv geckodriver /opt
-    ```
-    * Add `/opt` to your `PATH` in your `profile` if you haven't already.  Add
-    this line to `/etc/profile`:
-    ```bash
-    export PATH=$PATH:/opt
-    ```
 
-## Clone and install the test suite
-* If you haven't already, then
+### GeckoDriver
+Selenium needs GeckoDriver installed in order to work with the latest version
+of Firefox.
+* [Download GeckoDriver](https://github.com/mozilla/geckodriver/releases)
+* Unzip the downloaded file:
+```bash
+$ tar -xvzf geckodriver<version>.tar.gz
+```
+* Move `geckodriver` to the `/usr/local/bin` directory to put it in your
+`PATH`:
+```bash
+$ sudo mv geckodriver /usr/local/bin
+```
+
+## Install the test suite
+Clone and install the test suite.
+
+### Clone
+If you haven't already, then
 [clone](https://help.github.com/articles/cloning-a-repository/) this repository.
-* Navigate into the test directory:
+
+### Navigate to the test directory
 ```bash
 $ cd TestSuite_ProofOfConcept
 ```
-* Create a [Python virtual environment](https://virtualenv.pypa.io/en/stable/):
+
+### Create a venv
+Create a [Python virtual environment](https://virtualenv.pypa.io/en/stable/):
 ```bash
 $ virtualenv venv
 ```
-* Activate the Python virtual environment:
-    ```bash
-    $ . venv/bin/activate
-    ```
-    * You should see `(venv)` at the start of your command prompt.
-    * Verify that the Python path is to your virtual environment:
-    ```bash
-    $ which python
-    ```
-* Install the test suite requirements:
+
+### Activate venv
+Activate the Python virtual environment:
+```bash
+$ . venv/bin/activate
+```
+You should see `(venv)` at the start of your command prompt.  Verify that the
+Python path is to your virtual environment:
+```bash
+$ which python
+```
+
+### Install test suite Python packages
+Install the test suite requirements:
 ```bash
 $ pip install -r requirements.txt
 ```
