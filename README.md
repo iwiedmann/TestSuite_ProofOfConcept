@@ -7,58 +7,58 @@ Firefox.  It should work on other operating systems, but this has not been
 tested.
 
 ## Requirements
-1. Install and setup the latest versions of the following if you haven't
+* Install and setup the latest versions of the following if you haven't
 already.
-    1. [Python 2.x with pip and setuptools](https://www.python.org/downloads/)
-    2. [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-    3. [Git](https://help.github.com/articles/set-up-git/)
-2. Upgrade `pip` and `setuptools` to the latest version:
+    * [Python 2.x with pip and setuptools](https://www.python.org/downloads/)
+    * [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+    * [Git](https://help.github.com/articles/set-up-git/)
+* Upgrade `pip` and `setuptools` to the latest version:
 ```bash
 $ pip install --upgrade pip setuptools
 ```
-3. Install the [virtualenv](https://virtualenv.pypa.io/en/stable/) package if
+* Install the [virtualenv](https://virtualenv.pypa.io/en/stable/) package if
 you haven't already:
 ```bash
 $ pip install virtualenv
 ```
-4. Install GeckoDriver in order for Selenium to work with the latest version of
+* Install GeckoDriver in order for Selenium to work with the latest version of
 Firefox.
-    1. [Download GeckoDriver](https://github.com/mozilla/geckodriver/releases)
-    2. Unzip the downloaded file:
+    * [Download GeckoDriver](https://github.com/mozilla/geckodriver/releases)
+    * Unzip the downloaded file:
     ```bash
     $ tar -xvzf geckodriver<version>.tar.gz
     ```
-    3. Move `geckodriver` to the `/opt` directory:
+    * Move `geckodriver` to the `/opt` directory:
     ```bash
     $ sudo mv geckodriver /opt
     ```
-    4. Add `/opt` to your `PATH` in your `profile` if you haven't already.  Add
+    * Add `/opt` to your `PATH` in your `profile` if you haven't already.  Add
     this line to `/etc/profile`:
     ```bash
     export PATH=$PATH:/opt
     ```
 
 ## Clone and install the test suite
-1. If you haven't already, then
+* If you haven't already, then
 [clone](https://help.github.com/articles/cloning-a-repository/) this repository.
-2. Navigate into the test directory:
+* Navigate into the test directory:
 ```bash
 $ cd TestSuite_ProofOfConcept
 ```
-3. Create a [Python virtual environment](https://virtualenv.pypa.io/en/stable/):
+* Create a [Python virtual environment](https://virtualenv.pypa.io/en/stable/):
 ```bash
 $ virtualenv venv
 ```
-4. Activate the Python virtual environment:
+* Activate the Python virtual environment:
     ```bash
     $ . venv/bin/activate
     ```
-    1. You should see `(venv)` at the start of your command prompt.
-    2. Verify that the Python path is to your virtual environment:
+    * You should see `(venv)` at the start of your command prompt.
+    * Verify that the Python path is to your virtual environment:
     ```bash
     $ which python
     ```
-5. Install the test suite requirements:
+* Install the test suite requirements:
 ```bash
 $ pip install -r requirements.txt
 ```
