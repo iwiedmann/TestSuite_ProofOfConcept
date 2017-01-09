@@ -57,9 +57,6 @@ class AboutUsPage(Page):
         :param locator_name: one of the keys in self._sub_menu_locators
         """
         locator = self._sub_menu_locators[locator_name]
-        ###############debug
-        print "current locator = {locator}".format(locator=locator)
-        ####################end
         self.selenium.find_element(*locator).click()
 
     @property
